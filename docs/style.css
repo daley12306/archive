@@ -10,7 +10,7 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 230px;
+  width: 260px;
   background: #252526;
   overflow: auto;
   border-right: 1px solid #333;
@@ -21,6 +21,15 @@ body {
   font-size: 16px;
 }
 
+#searchBox {
+  width: 220px;
+  margin: 0 12px 10px 12px;
+  padding: 7px;
+  background: #1e1e1e;
+  color: #ddd;
+  border: 1px solid #444;
+}
+
 #fileList {
   list-style: none;
   padding: 0;
@@ -28,10 +37,11 @@ body {
 }
 
 #fileList li {
-  padding: 8px 12px;
+  padding: 7px 12px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   border-bottom: 1px solid #333;
+  word-break: break-all;
 }
 
 #fileList li:hover {
@@ -39,7 +49,7 @@ body {
 }
 
 #main {
-  margin-left: 230px;
+  margin-left: 260px;
 }
 
 #topbar {
@@ -49,6 +59,8 @@ body {
   padding-left: 15px;
   border-bottom: 1px solid #333;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #code {
@@ -67,9 +79,8 @@ body {
 
 .num {
   display: inline-block;
-  width: 40px;
+  width: 42px;
   color: #777;
   text-align: right;
   padding-right: 12px;
-  user-select: none;
 }
