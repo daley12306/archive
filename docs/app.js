@@ -133,3 +133,12 @@ function setupSearch() {
 
 setupSearch();
 loadRepoFiles();
+var toggleBtn = document.getElementById("toggleBtn");
+
+toggleBtn.onclick = function () {
+    if (document.body.className.indexOf("sidebar-hidden") >= 0) {
+        document.body.className = "";
+    } else {
+        document.body.className = "sidebar-hidden";
+    }
+};
