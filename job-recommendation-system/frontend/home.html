@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#434655",
+                    "surface": "#f9f9ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#40484f",
+                    "on-secondary-fixed": "#151c23",
+                    "surface-dim": "#d3daef",
+                    "primary-container": "#2563eb",
+                    "on-secondary-container": "#5e656d",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#943700",
+                    "tertiary-container": "#bc4800",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#dbe1ff",
+                    "secondary": "#585f67",
+                    "surface-variant": "#dce2f7",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "inverse-surface": "#293040",
+                    "outline": "#737686",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dce3ec",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#e1e8fd",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#dce3ec",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-primary-fixed": "#00174b",
+                    "surface-tint": "#0053db",
+                    "background": "#f9f9ff",
+                    "on-background": "#141b2b",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-container": "#ffede6",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary-fixed": "#360f00",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-container": "#e9edff",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-bright": "#f9f9ff",
+                    "primary": "#004ac6",
+                    "inverse-primary": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#141b2b",
+                    "secondary-fixed-dim": "#c0c7d0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary flex items-center gap-1">
+                JobAI ✦
+            </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Jobs</a>
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Recommend</a>
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Saved</a>
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">History</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all" data-icon="settings">settings</button>
+<button class="hidden lg:block px-6 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Post a Job</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="bg-surface-container-low py-20 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto text-center">
+<h1 class="font-display-lg text-display-lg text-on-background mb-stack-lg">Find your next opportunity</h1>
+<div class="max-w-2xl mx-auto relative">
+<div class="flex bg-surface-container-lowest rounded-full p-2 shadow-sm border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
+<div class="flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-body-md py-3" placeholder="Job title, keywords, or company" type="text"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Search</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Companies -->
+<section class="py-stack-lg border-b border-outline-variant bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<p class="text-center text-label-sm text-outline mb-6">TRUSTED BY WORLD-CLASS TEAMS</p>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale">
+<img alt="Google" class="h-8" data-alt="The minimal, flat grayscale logo of Google Inc. displayed on a clean white background. The aesthetic is professional, corporate, and understated, fitting into a modern SaaS platform's trust-building section. Soft ambient lighting ensures no harsh reflections on the digital icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApFQxrGi_pjZ1yj6die0rTyDmDwtCarZC9DMDeLQ-LhuSlHWlSbPhWj8RTzNCQ3uhoka1vQNUy5zslWYptBVZ9-Dzc0zIEtE8YgF3p3o0jPI_x7_syPAMY7HCqTc-dEa2kzbtOW7f79LiH7GvQntuW15d4DAm9q1GrYptznZdw8m5P8WrjFOFAUIIbn_3IgAQkddicZWPP_qUH4y98cc59AUraeYMpOeIpoo90ld0d1llyu4koQ-mOiI0XVxgIBdCOJ_ccJ0lWobkG"/>
+<img alt="Meta" class="h-8" data-alt="A clean, flat grayscale version of the Meta infinity loop logo. The design is centered on a bright, minimalist light-mode background, evoking a sense of corporate reliability and high-tech efficiency. The lighting is perfectly balanced for a crisp digital display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtUo3EDv-xi_bHVCZxv2Cs4FGUHHACymATL1bzBnQ5gN7HGGp1rV0Nv6lryZaflmM2-QIH6VBCCLMgyGGgBlSfjtQzIMpntAbo-5FK0ngWIX9yyYY9g7LWE6VUulO8dylQ2V-21Y2zJxJkrqi9pMPzl36K8Xi7rEmMtcKq86OebzulqBfTvtDJpdtA-h1ageewyRdvgzYmJqtwJZO339OfXguHiK-htTvwQmFD50S9Dlcv_mHLz8JDt6tvAUA1rmDACj5sOHB8xfn4"/>
+<img alt="Amazon" class="h-8" data-alt="The monochrome grayscale logo of Amazon, specifically the iconic arrow and text, shown in a clean digital format. The visual style is modern and professional, set against a neutral, high-key background suitable for a corporate landing page." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXAY66gI3fYP_EPk1TCOkOe-h5R651KhXiusN7taM4fYPlZYQBEZXS8qN2yZKv7FI-kG7_PbZxZ6PYsqrdDVCJpJeEuCuTDP4FAGbV2XVah-cL7OjlCeyEn6FhYul0PgNJih6QB1AL2ydkpDhq4bIezLdoTpImye5EfrlOO5KuDYsMgp27nD-Ecln0eGYlmMKR_KqizkNPUc19IFt1x_eV4LIjkfoCSY4nqrTQtFz4TAcwy04g4CIQFSmRMK6FF1aVYSMJQdBgu_ca"/>
+<img alt="Microsoft" class="h-8" data-alt="A flat, grayscale representation of the Microsoft four-square logo. The composition is minimalist and centered, using a crisp white background to highlight the clean lines and corporate aesthetic of the brand. The lighting is soft and consistent." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuYJTqQOba2lSMDdzA9iaG8Yh-wFvmYXKlTuL2JS_qzHokRZPrDwmIypZ2pbs6504B-oucGgy0aOI1qtjCR-xetNdh6LMmY5nRnQKT7XF14CfNT2gWkMSFPyTDs9XCrRwQyweMh_aSL7Gn7h2PN0YzvvnO9w-njBsvOPjJcWy4z0gMaQU561PHB6rVV_QI44x9sNMVzyQuZnxyyBUHBt8NPx3O3EUEZfATnjdYsHOuoVbw8f5i5v47IygnT6VmSsmmsP8Vpj9Nb0ww"/>
+<img alt="Apple" class="h-8" data-alt="The iconic Apple logo in a solid grayscale tone, rendered with clean edges and a flat design approach. It sits within a bright, airy digital space, maintaining a high-end professional appearance consistent with modern UI standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC27LaXj3rZvUyFUwwcFFIQOeeGcdznyzpeeFXqAwD4MwTCHp5u4SM4ScDnx-qtwbsjJ4zhxXOVFbC9MoWIws4Ii0qYRpdTMe1fUGXFaEHVkdKvCe9mCrbXEI5g0qHsEr9XnrWyrerTqKkic1G8lTT_ZAbAu1cXhypB-4ACmXTjAdtGhv9cq0kqKU6Bj5Dfyp3rdAH-ElzIo4lN86w3d4nEXkCdyPzi2QpPlgWIRMQwKVfbqPkvhkc0nTIxGRr_W6Twjl5Afn2YPxAk"/>
+</div>
+</div>
+</section>
+<!-- Filter Categories -->
+<section class="py-stack-md sticky top-16 z-40 bg-surface/80 backdrop-blur-md">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-stack-sm overflow-x-auto scrollbar-hide py-2">
+<button class="whitespace-nowrap px-6 py-2 bg-primary text-on-primary rounded-full font-label-md">All Jobs</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span> Data &amp; AI
+                    </button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors">Engineering</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors">Design</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors">Marketing</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors">Product</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors">Sales</button>
+<button class="whitespace-nowrap px-6 py-2 bg-surface-container text-on-surface-variant rounded-full font-label-md hover:bg-surface-container-high transition-colors">Remote</button>
+</div>
+</div>
+</section>
+<!-- Job Grid -->
+<section class="py-stack-lg bg-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Browse Jobs</h2>
+<p class="text-body-md text-on-surface-variant">Showing 1,240 open opportunities</p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-label-md bg-surface text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span> Filter
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-label-md bg-surface text-on-surface hover:bg-surface-container-low transition-all">
+                            Sort: Newest <span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Job Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="neurology">neurology</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span> 98% Match
+                                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Senior AI Engineer</h3>
+<p class="text-label-md text-on-surface-variant mb-4">Anthropic AI • San Francisco, CA</p>
+<p class="text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+                                Join our core research team to build the next generation of safe and steerable AI models. You'll be working on RLHF and model evaluations.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">Full-time</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">$180k - $250k</span>
+</div>
+<div class="flex gap-stack-sm mt-auto">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="draw">draw</span>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-label-sm">Remote</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Product Designer</h3>
+<p class="text-label-md text-on-surface-variant mb-4">Linear • Global</p>
+<p class="text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+                                We are looking for a designer with high craft who can help us define the future of high-performance project management tools.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">Contract</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">$120k - $160k</span>
+</div>
+<div class="flex gap-stack-sm mt-auto">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span> 85% Match
+                                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Data Scientist</h3>
+<p class="text-label-md text-on-surface-variant mb-4">Snowflake • Seattle, WA</p>
+<p class="text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+                                Help us leverage massive datasets to improve query optimization and platform performance across our global cloud infrastructure.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">Full-time</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">$165k - $210k</span>
+</div>
+<div class="flex gap-stack-sm mt-auto">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Job Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Backend Architect</h3>
+<p class="text-label-md text-on-surface-variant mb-4">Stripe • New York, NY</p>
+<p class="text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+                                Scale the economic infrastructure of the internet. You will be responsible for the core payment processing engine reliability.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">Full-time</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">$200k+</span>
+</div>
+<div class="flex gap-stack-sm mt-auto">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Job Card 5 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="campaign">campaign</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span> 92% Match
+                                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Growth Marketing Lead</h3>
+<p class="text-label-md text-on-surface-variant mb-4">Vercel • Remote</p>
+<p class="text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+                                Drive developer adoption through data-driven campaigns. You'll lead our performance marketing and community engagement strategy.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">Full-time</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">$140k - $190k</span>
+</div>
+<div class="flex gap-stack-sm mt-auto">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Job Card 6 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-high p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="monitoring">monitoring</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Financial Analyst</h3>
+<p class="text-label-md text-on-surface-variant mb-4">Goldman Sachs • Dallas, TX</p>
+<p class="text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+                                Support the investment banking division with sophisticated financial modeling and market trend analysis.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">On-site</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm text-on-secondary-container">$90k - $130k</span>
+</div>
+<div class="flex gap-stack-sm mt-auto">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-stack-lg py-stack-md flex flex-col md:flex-row items-center justify-between gap-stack-md border-t border-outline-variant">
+<p class="text-body-sm text-on-surface-variant">Showing 1 to 6 of 1,240 jobs</p>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-lg font-label-md">1</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-low text-on-surface">2</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-low text-on-surface">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-low text-on-surface">42</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary mb-stack-md md:mb-0">
+                JobAI ✦
+            </div>
+<div class="flex flex-wrap justify-center gap-stack-lg mb-stack-md md:mb-0">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline">
+                © 2024 JobAI Platform. Powered by AI ✦
+            </div>
+</div>
+</footer>
+</body></html>

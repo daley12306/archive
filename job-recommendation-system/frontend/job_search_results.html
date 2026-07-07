@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#434655",
+                    "surface": "#f9f9ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#40484f",
+                    "on-secondary-fixed": "#151c23",
+                    "surface-dim": "#d3daef",
+                    "primary-container": "#2563eb",
+                    "on-secondary-container": "#5e656d",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#943700",
+                    "tertiary-container": "#bc4800",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#dbe1ff",
+                    "secondary": "#585f67",
+                    "surface-variant": "#dce2f7",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "inverse-surface": "#293040",
+                    "outline": "#737686",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dce3ec",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#e1e8fd",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#dce3ec",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-primary-fixed": "#00174b",
+                    "surface-tint": "#0053db",
+                    "background": "#f9f9ff",
+                    "on-background": "#141b2b",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-container": "#ffede6",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary-fixed": "#360f00",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-container": "#e9edff",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-bright": "#f9f9ff",
+                    "primary": "#004ac6",
+                    "inverse-primary": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#141b2b",
+                    "secondary-fixed-dim": "#c0c7d0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #E8EAF0; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .ai-sparkle { color: #2563EB; }
+        .ai-match-badge { background-color: #EFF6FF; color: #2563EB; }
+        .card-shadow { box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .card-shadow:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.08); transform: translateY(-4px); }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary flex items-center gap-1">
+                JobAI ✧
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 font-body-md text-body-md" href="#">Jobs</a>
+<a class="text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Recommend</a>
+<a class="text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">Saved</a>
+<a class="text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary transition-colors font-body-md text-body-md" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 mr-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all">settings</span>
+</div>
+<button class="rounded-full bg-secondary-container text-on-secondary-fixed px-6 py-2 font-label-md text-label-md hover:bg-surface-variant transition-all active:scale-95">Sign In</button>
+<button class="rounded-full bg-primary-container text-on-primary px-6 py-2 font-label-md text-label-md hover:opacity-90 transition-all active:scale-95">Post a Job</button>
+</div>
+</div>
+</header>
+<!-- Search Bar Row -->
+<div class="bg-surface-container-lowest border-b border-outline-variant sticky top-16 z-40">
+<div class="max-w-container-max mx-auto px-margin-desktop py-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Job title or keyword" type="text"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Location" type="text"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">payments</span>
+<select class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all appearance-none">
+<option>Salary range</option>
+<option>$80k - $120k</option>
+<option>$120k - $180k</option>
+<option>$180k+</option>
+</select>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">sort</span>
+<select class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all appearance-none">
+<option>Sort by: Most Relevant</option>
+<option>Newest First</option>
+<option>Highest Salary</option>
+<option>Best AI Match</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar -->
+<aside class="w-full md:w-[280px] shrink-0 space-y-stack-md">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm mb-4">Filters</h3>
+<div class="space-y-6">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-3">Job Type</p>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm">Full-time</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm">Contract</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm">Freelance</span>
+</label>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-3">Experience</p>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm">Entry level</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm">Mid level</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-sm">Senior level</span>
+</label>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-3">Work Type</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1 bg-primary text-on-primary rounded-full text-label-sm">Remote</button>
+<button class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm">Hybrid</button>
+<button class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm">On-site</button>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-3">Salary Range ($k)</p>
+<input class="w-full h-2 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="250" min="0" type="range" value="120"/>
+<div class="flex justify-between mt-2 text-label-sm text-outline">
+<span>$0</span>
+<span>$250k+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Smart Match Card -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined ai-sparkle" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md font-bold">AI Smart Match</span>
+</div>
+<p class="text-body-sm mb-4 opacity-90">Our AI analyzed your profile. You are in the top 5% of candidates for these roles.</p>
+<button class="w-full py-2 bg-white text-primary font-label-md text-label-md rounded-full hover:bg-surface-container-low transition-all">Optimize My Profile</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+</div>
+</aside>
+<!-- Job Grid -->
+<section class="flex-1">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h1 class="font-headline-lg text-headline-lg">128 Data Engineer jobs found</h1>
+<p class="text-on-surface-variant text-body-md">Based on your preferences and skills</p>
+</div>
+<div class="hidden lg:flex gap-2">
+<button class="p-2 border border-outline-variant rounded-lg bg-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-lg bg-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Job Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center">
+<img alt="Google" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABAW1oaEp6Ta4yTaQkJr2EF6CfYQZPKuyNHA_DuPseq1iOsgThdXb03q3znylehisXFV5BmduN3XdgAqgALO7lv_A_9RdeXow0rZqEfavHOENt0ix0Jvu7z4R7Y2zWPcoGfSQLATj0G7ExKbSdxVWvar9J_bs9ZC-Q67IHVgl5ExZzK2bq-4XFpnR3qU37ScH70f86tdmPR6gzslBsUY9vNZ9HbecYuBhDdJhRNMfupMKWAgh-FB05qy1Ne6zlU-ltEPe6SagenVOJ"/>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Google</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm mb-2 hover:text-primary cursor-pointer">Senior Data Engineer</h2>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">Remote</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">$160k - $220k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mb-6 flex-grow">
+                        Architect and scale massive data pipelines using GCP, BigQuery, and Airflow. Join our Core Infrastructure team to...
+                    </p>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<div class="ai-match-badge px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            AI Match: 98%
+                        </div>
+<span class="text-label-sm text-outline">2h ago</span>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center">
+<img alt="Netflix" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7o0YN55nriwuTkl4gknvrnHtG7lcq3EXit_fcu3tBjfcPOlPKJIDu81zoqkszf0iOuDtvG243pWZOMGO3poEXl93kkkK0tAIPNfnEbatKFF243m6CbynegX7oYtxjR5EtJoxnJb0yqav2EtYZuqUPw6-R6tGYYJ_s0g3rm4ncav2ZHjpEfso0F2ZGKf0_skO3xIcfiieaQF8Z8MIPmB1YMq1MiiJKPv0BP5v7CA5JEVZc5bH2MGobKKJlN34w_fBbRieDwZwts1k"/>
+</div>
+<button class="text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Netflix</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm mb-2 hover:text-primary cursor-pointer">Staff Data Architect</h2>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">Hybrid</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">$190k - $250k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mb-6 flex-grow">
+                        Lead the evolution of our content recommendation data platform. Experience with Spark and petabyte-scale...
+                    </p>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<div class="ai-match-badge px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            AI Match: 95%
+                        </div>
+<span class="text-label-sm text-outline">5h ago</span>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center">
+<img alt="Stripe" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjEjr3YPzBrou-_W8najOcwlvsiD1XPaxnX0VfX71-J0JhZuSqhLknhUY1UDQWFH6pf0oGJ7p6bKexUpixEngXqtWbVNCRu7rJM7d8V-SuN7zz7oUfBWBtTrGPJOLU3v-F_2G_fx4lqxkHzTHc8BprDbxBarBxXB5aNTMv5nfYQlnpvIftZid4YiPqKQyIhoXZIrzgDTopx8a-idvuh54YNX6FJ715Yr13i46PWDArY8_44En_IKDmVtHEbY9Vpr8tWETKYVw01vMP"/>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Stripe</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm mb-2 hover:text-primary cursor-pointer">Data Systems Engineer</h2>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">Remote</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">$140k - $190k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mb-6 flex-grow">
+                        Build financial data pipelines with 99.999% reliability. We need someone who deeply understands distributed...
+                    </p>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<div class="ai-match-badge px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            AI Match: 92%
+                        </div>
+<span class="text-label-sm text-outline">1d ago</span>
+</div>
+</div>
+<!-- Job Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center">
+<img alt="Airbnb" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSCUragrERwC5Ju4yprOQWdgiPinm6DflO44wqvPS6lfdEqjvndulQHmtQi84eBoZ3M-npU3t_GhzrmpB91daISpu5sZ5417Qtp8TOSccDAvpMfrskcXsU-JcU4t3w__e2wTo2pgXZJGA7zMrp_NAsy2s4fWsazGG05Nz-gQG8rw_c1Rs4xi888RXdeuHdtA44i_LyWULhRbp4TgxtwT5NcNCF2ZyvEOoe7kzPCaZEaVsP_rdVC1l2fk7MzxP48S2XCYPoRm4SxgqG"/>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Airbnb</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm mb-2 hover:text-primary cursor-pointer">ML Data Engineer</h2>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">Remote</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">$155k - $210k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mb-6 flex-grow">
+                        Support our AI/ML researchers by building high-performance feature stores and training data infrastructure.
+                    </p>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<div class="ai-match-badge px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            AI Match: 91%
+                        </div>
+<span class="text-label-sm text-outline">2d ago</span>
+</div>
+</div>
+<!-- Job Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center">
+<img alt="Tesla" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsE22SkfscQSp41PK5ASP8FKuILB4S8OWMgjBxFJtLJYNjV5wg4ZPi_aNuz1QGAt5-Zn3y06AQ1atL2tErQ7wCF1vYUNWEOzz0BYRogLJBJk6B7HARsL4UWUG_q5dDMk-qi0jODzvJNJ6LI1ANNC9fPKSdL7DNRheEC_Y2POYQrrSHzdAavBRX1z6MCCZ0GO1VJaan-FX_Sx8Rod25RasPgmiRx3MVYvJb0Z4ujTtr3HD9-dsen5ExFMnzBPvIFWVDFTADEj9i_Ms6"/>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Tesla</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm mb-2 hover:text-primary cursor-pointer">Data Infrastructure</h2>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">On-site</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">$130k - $185k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mb-6 flex-grow">
+                        Work on the data backbone for Autopilot. Experience with Kubernetes and high-throughput ingestion is...
+                    </p>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<div class="ai-match-badge px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            AI Match: 89%
+                        </div>
+<span class="text-label-sm text-outline">3d ago</span>
+</div>
+</div>
+<!-- Job Card 6 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden flex items-center justify-center">
+<img alt="Spotify" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArjjH3yLT8qDzIuQidevOM7SJDhg3UFOs7eDsEgcrD8ywsPqzl8DazjX15ilA4kSs3otNF7oMfd38mOv_AzsxwfMsKi-sMk8Plpzvug_qhrA8QSvANLTwzJxUwr9mGwXhkFzwQNwC3ZF-q64ynTGoAfS5E-8ZgwTylaz6Xuufmrxt07wjBs2EpV1RvPdvcT5nril95AIAzrlktFe4sgMBOm5RGn7lgT-WhUykKZkWG39shsycIRXF0S8fj4p5AKYzqZONHYcruNsB0"/>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Spotify</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm mb-2 hover:text-primary cursor-pointer">Big Data Engineer</h2>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">Remote</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-on-surface-variant rounded text-label-sm">$150k - $200k</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2 mb-6 flex-grow">
+                        Optimize our massive data warehouse for music insights. You'll be working with Scio, BigQuery and...
+                    </p>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<div class="ai-match-badge px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            AI Match: 88%
+                        </div>
+<span class="text-label-sm text-outline">3d ago</span>
+</div>
+</div>
+</div>
+<!-- Pagination Placeholder -->
+<div class="mt-stack-lg flex justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-outline-variant text-outline hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-all">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-outline">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-all">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-outline-variant text-outline hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="mb-4 md:mb-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">JobAI ✧</div>
+<p class="text-label-sm text-on-surface-variant mt-1">© 2024 JobAI Platform. Powered by AI ✦</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Contact Us</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Careers</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Recommendation - JobAI ✦</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#434655",
+                        "surface": "#f9f9ff",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#40484f",
+                        "on-secondary-fixed": "#151c23",
+                        "surface-dim": "#d3daef",
+                        "primary-container": "#2563eb",
+                        "on-secondary-container": "#5e656d",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#943700",
+                        "tertiary-container": "#bc4800",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary": "#585f67",
+                        "surface-variant": "#dce2f7",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "inverse-surface": "#293040",
+                        "outline": "#737686",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dce3ec",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-container-high": "#e1e8fd",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#dce3ec",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-primary-fixed": "#00174b",
+                        "surface-tint": "#0053db",
+                        "background": "#f9f9ff",
+                        "on-background": "#141b2b",
+                        "surface-container-low": "#f1f3ff",
+                        "on-tertiary-container": "#ffede6",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-tertiary-fixed": "#360f00",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-container": "#e9edff",
+                        "surface-container-highest": "#dce2f7",
+                        "surface-bright": "#f9f9ff",
+                        "primary": "#004ac6",
+                        "inverse-primary": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#141b2b",
+                        "secondary-fixed-dim": "#c0c7d0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #E8EAF0;
+        }
+        .ai-sparkle {
+            color: #2563EB;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-md font-headline-md font-bold text-primary flex items-center gap-1">
+                JobAI ✦
+            </div>
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Jobs</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Recommend</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Saved</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">settings</button>
+<div class="h-8 w-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young professional in a modern office setting. The person has a friendly and approachable expression. The lighting is soft and natural, emphasizing a bright, light-mode corporate aesthetic. The background is a blurred, high-end office interior with clean lines and a neutral palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiBKUeBC3SEWeycqezEqu1NZSZwYLH9gso_U9SWbpDUSzK1vxA4wxAA95iSZUuDc3iwAlZfiC4GTkHA3pT6zTQCf9J3yGfdvPtUDEfYZcpAzzot-u-7BWXV8lLv5krNcJ6d0E9wI6e6upLBHQT5oxgdZXcwfemaaYC-xqMPdGQ6uL765EgwxJFa8FX-Flg5H7BIPmiR2UTYryWfb5q0tT6DkxRtZtRFG37n8HrAgYBRtr9RIqJp_OP9FwO9v0zd8wD3r1UCKYppidT"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[760px] mx-auto py-stack-lg px-margin-mobile md:px-0">
+<!-- Page Header -->
+<div class="text-center mb-stack-lg">
+<h1 class="text-display-lg font-display-lg text-on-background mb-stack-sm">
+<span class="ai-sparkle">✦</span> AI Job Recommendation
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                Our intelligent engine analyzes your profile and preferences to find your perfect career match in seconds.
+            </p>
+</div>
+<div class="flex flex-col gap-stack-lg">
+<!-- Step 1: Upload CV -->
+<section class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-sm border border-outline-variant hover:shadow-md transition-all duration-300">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-container text-on-primary font-bold">1</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Upload Your Resume</h2>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-stack-lg flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-primary mb-stack-sm group-hover:scale-110 transition-transform">cloud_upload</span>
+<p class="text-body-md font-body-md text-on-surface-variant font-medium">Drag and drop your CV here or <span class="text-primary font-bold">Browse</span></p>
+<p class="text-label-sm font-label-sm text-outline mt-2">Supports PDF, DOCX (Max 5MB)</p>
+</div>
+<div class="mt-stack-md flex items-start gap-2 bg-surface-container-high/50 p-stack-md rounded-lg border border-primary/10">
+<span class="material-symbols-outlined text-primary text-xl">auto_awesome</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+<strong>AI Extraction:</strong> Our system will automatically extract skills, experience, and education from your document to personalize recommendations.
+                    </p>
+</div>
+</section>
+<!-- Step 2: Preferences -->
+<section class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-sm border border-outline-variant hover:shadow-md transition-all duration-300">
+<div class="flex items-center gap-2 mb-stack-lg">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-container text-on-primary font-bold">2</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Career Preferences</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Job Type</label>
+<select class="bg-surface border border-outline-variant rounded-lg p-3 text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none">
+<option>Full-time</option>
+<option>Contract</option>
+<option>Freelance</option>
+<option>Internship</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Experience Level</label>
+<select class="bg-surface border border-outline-variant rounded-lg p-3 text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none">
+<option>Entry Level (0-2 years)</option>
+<option>Mid Level (3-5 years)</option>
+<option>Senior Level (6+ years)</option>
+<option>Executive</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Work Format</label>
+<div class="flex gap-2">
+<button class="flex-1 py-2 px-3 rounded-full border border-primary bg-primary-container text-on-primary text-body-sm font-medium">Remote</button>
+<button class="flex-1 py-2 px-3 rounded-full border border-outline-variant bg-surface text-on-surface-variant text-body-sm hover:border-primary transition-colors">Hybrid</button>
+<button class="flex-1 py-2 px-3 rounded-full border border-outline-variant bg-surface text-on-surface-variant text-body-sm hover:border-primary transition-colors">On-site</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Target Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl">location_on</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-3 pl-10 text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="e.g. San Francisco, CA" type="text"/>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg">
+<div class="flex justify-between items-center mb-stack-sm">
+<label class="text-label-md font-label-md text-on-surface-variant">Annual Salary Range</label>
+<span class="text-primary font-bold text-body-md">$120k — $180k</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute w-full h-1.5 bg-secondary-container rounded-full"></div>
+<div class="absolute left-1/4 right-1/4 h-1.5 bg-primary rounded-full"></div>
+<div class="absolute left-1/4 w-5 h-5 bg-on-primary border-4 border-primary rounded-full shadow-md -translate-x-1/2"></div>
+<div class="absolute right-1/4 w-5 h-5 bg-on-primary border-4 border-primary rounded-full shadow-md translate-x-1/2"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-label-sm font-label-sm text-outline">$40k</span>
+<span class="text-label-sm font-label-sm text-outline">$300k+</span>
+</div>
+</div>
+</section>
+<!-- Step 3: Skills -->
+<section class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-sm border border-outline-variant hover:shadow-md transition-all duration-300">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-container text-on-primary font-bold">3</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Extracted Skills</h2>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-stack-md">Review and edit the skills we found in your profile. Click a tag to remove it.</p>
+<div class="flex flex-col gap-stack-md">
+<div>
+<h3 class="text-label-md font-label-md text-on-surface-variant mb-2">Technical Skills</h3>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                React.js <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                TypeScript <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                Node.js <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                Tailwind CSS <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-dashed border-primary text-primary text-label-md hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-sm">add</span> Add Skill
+                            </button>
+</div>
+</div>
+<div>
+<h3 class="text-label-md font-label-md text-on-surface-variant mb-2">Soft Skills</h3>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                Team Leadership <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                Strategic Thinking <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container text-label-md transition-all hover:brightness-110 cursor-pointer">
+                                Problem Solving <span class="material-symbols-outlined text-sm">close</span>
+</span>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-dashed border-tertiary text-tertiary text-label-md hover:bg-tertiary/5 transition-all">
+<span class="material-symbols-outlined text-sm">add</span> Add Skill
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Submit Action -->
+<div class="mt-stack-sm mb-stack-lg">
+<button class="w-full py-5 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Find My Matching Jobs
+                </button>
+<p class="text-center text-label-sm font-label-sm text-on-surface-variant mt-4 opacity-70">
+                    AI processing usually takes 3-5 seconds. We'll show you matches above 80% compatibility.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-sm font-headline-sm font-bold text-primary mb-stack-md md:mb-0">
+                JobAI ✦
+            </div>
+<div class="flex flex-wrap justify-center gap-6 mb-stack-md md:mb-0">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Careers</a>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-80">
+                © 2024 JobAI Platform. Powered by AI ✦
+            </p>
+</div>
+</footer>
+</body></html>
