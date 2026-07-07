@@ -100,3 +100,32 @@ body.sidebar-hidden #sidebar {
 body.sidebar-hidden #main {
     margin-left: 0;
 }
+
+.nb-cell {
+  margin: 14px;
+  border: 1px solid #333;
+  background: #1e1e1e;
+}
+
+.nb-label {
+  padding: 6px 10px;
+  background: #333;
+  color: #aaa;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.nb-cell pre {
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+}
+
+.nb-md pre {
+  color: #ddd;
+  white-space: pre-wrap;
+}
+
+.nb-code pre {
+  color: #dcdcdc;
+}
