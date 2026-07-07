@@ -42,6 +42,63 @@ function isViewableFile(path) {
   return true;
 }
 
+function renderLines(text) {
+  var lines = escapeHtml(text).split("\n");
+  var html = "";
+
+  for (var i = 0; i < lines.length; i++) {
+    html += '<span class="line"><span class="num">' +
+      (i + 1) +
+      "</span>" +
+      lines[i] +
+      "</span>";
+  }
+
+  return html;
+}
+
+function renderNotebook(text) {
+  var nb;
+  var html = "";
+
+  try {
+    nb = JSON.parse(text);
+  } catch (e) {
+    return renderLines(text);
+  }
+
+  if (!nb.cells) {
+    return renderLines(text);
+  }
+
+  for (var i = 0; i < nb.cells.length; i++) {
+    var cell = nb.cells[i];
+    var source = "";
+
+    if (cell.source) {
+      if (typeof cell.source === "string") {
+        source = cell.source;
+      } else {
+        source = cell.source.join("");
+      }
+    }
+
+    if (cell.cell_type === "markdown") {
+      html += '<div class="nb-cell nb-md">';
+      html += '<div class="nb-label">Markdown</div>';
+      html += '<pre>' + escapeHtml(source) + '</pre>';
+      html += '</div>';
+    } else if (cell.cell_type === "code") {
+      html += '<div class="nb-cell nb-code">';
+      html += '<div class="nb-label">Code</div>';
+      html += '<pre>' + renderLines(source) + '</pre>';
+      html += '</div>';
+    }
+  }
+
+  return html;
+}
+
 function loadRepoFiles() {
   xhrGet(API_URL, function (err, text) {
     var filename = document.getElementById("filename");
@@ -99,18 +156,11 @@ function loadFile(path) {
       return;
     }
 
-    var lines = escapeHtml(text).split("\n");
-    var html = "";
-
-    for (var i = 0; i < lines.length; i++) {
-      html += '<span class="line"><span class="num">' +
-        (i + 1) +
-        "</span>" +
-        lines[i] +
-        "</span>";
+    if (path.toLowerCase().indexOf(".ipynb") > -1) {
+      code.innerHTML = renderNotebook(text);
+    } else {
+      code.innerHTML = renderLines(text);
     }
-
-    code.innerHTML = html;
   });
 }
 
@@ -131,14 +181,20 @@ function setupSearch() {
   };
 }
 
-setupSearch();
-loadRepoFiles();
-var toggleBtn = document.getElementById("toggleBtn");
+function setupSidebarToggle() {
+  var toggleBtn = document.getElementById("toggleBtn");
 
-toggleBtn.onclick = function () {
+  if (!toggleBtn) return;
+
+  toggleBtn.onclick = function () {
     if (document.body.className.indexOf("sidebar-hidden") >= 0) {
-        document.body.className = "";
+      document.body.className = "";
     } else {
-        document.body.className = "sidebar-hidden";
+      document.body.className = "sidebar-hidden";
     }
-};
+  };
+}
+
+setupSearch();
+setupSidebarToggle();
+loadRepoFiles();
