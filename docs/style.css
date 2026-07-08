@@ -129,3 +129,17 @@ body.sidebar-hidden #main {
 .nb-code pre {
   color: #dcdcdc;
 }
+
+#previewBtn {
+  height: 28px;
+  margin: 7px 10px 7px 0;
+  cursor: pointer;
+}
+
+#previewFrame {
+  display: none;
+  width: 100%;
+  height: calc(100vh - 43px);
+  border: 0;
+  background: white;
+}
