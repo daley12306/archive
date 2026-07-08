@@ -3,6 +3,10 @@ var RAW_BASE = "https://raw.githubusercontent.com/daley12306/archive/master/";
 
 var allFiles = [];
 
+var currentPath = "";
+var currentText = "";
+var previewMode = false;
+
 function escapeHtml(text) {
   return text
     .replace(/&/g, "&amp;")
@@ -146,6 +150,8 @@ function renderFileList(files) {
 function loadFile(path) {
   var filename = document.getElementById("filename");
   var code = document.getElementById("code");
+  var frame = document.getElementById("previewFrame");
+  var previewBtn = document.getElementById("previewBtn");
 
   filename.innerHTML = path;
   code.innerHTML = "Loading...";
@@ -154,6 +160,26 @@ function loadFile(path) {
     if (err) {
       code.innerHTML = "Cannot load file: " + path;
       return;
+    }
+
+    currentPath = path;
+    currentText = text;
+    previewMode = false;
+
+    // Reset về chế độ Code
+    if (frame) frame.style.display = "none";
+    code.style.display = "block";
+
+    if (previewBtn) {
+      previewBtn.innerHTML = "Preview";
+
+      // Chỉ hiện nút Preview với file HTML
+      if (path.toLowerCase().indexOf(".html") > -1 ||
+          path.toLowerCase().indexOf(".htm") > -1) {
+        previewBtn.style.display = "inline-block";
+      } else {
+        previewBtn.style.display = "none";
+      }
     }
 
     if (path.toLowerCase().indexOf(".ipynb") > -1) {
@@ -195,6 +221,46 @@ function setupSidebarToggle() {
   };
 }
 
+function setupPreviewToggle() {
+  var btn = document.getElementById("previewBtn");
+  var code = document.getElementById("code");
+  var frame = document.getElementById("previewFrame");
+
+  if (!btn) return;
+
+  btn.onclick = function () {
+    if (currentPath.toLowerCase().indexOf(".html") === -1) {
+      alert("Preview chỉ hỗ trợ file HTML.");
+      return;
+    }
+
+    if (!previewMode) {
+      frame.style.display = "block";
+      code.style.display = "none";
+
+      var base = RAW_BASE + currentPath.substring(0, currentPath.lastIndexOf("/") + 1);
+
+      var doc = frame.contentWindow.document;
+      doc.open();
+      doc.write(
+        '<base href="' + base + '">' +
+        currentText
+      );
+      doc.close();
+
+      btn.innerHTML = "Code";
+      previewMode = true;
+    } else {
+      frame.style.display = "none";
+      code.style.display = "block";
+
+      btn.innerHTML = "Preview";
+      previewMode = false;
+    }
+  };
+}
+
 setupSearch();
 setupSidebarToggle();
 loadRepoFiles();
+setupPreviewToggle();
